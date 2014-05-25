@@ -1,4 +1,4 @@
-redditjs-wordpress
+wp-redditjs
 ==================
 
 Embed reddit on your website
