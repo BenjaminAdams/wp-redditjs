@@ -297,8 +297,24 @@ class WP_Redditjs {
 
 <script>
 //TODO: move this to JS file
-var o = document.getElementById('redditjs_post');
-o.contentWindow.postMessage('Hello world', '<?php echo $this->getBaseUrl(); ?>');
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+//run function//
+console.log('woo');
+
+if(typeof e !== 'undefined' && typeof e.data !== 'undefined' && typeof e.data.newHeight !== 'undefined')
+{
+document.getElementById('redditjs_post').height = e.data.newHeight+'px';	
+}
+
+
+},false);
+
+
 </script>
 
 <?php
