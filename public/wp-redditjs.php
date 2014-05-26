@@ -76,7 +76,7 @@ class WP_Redditjs {
 		/* Define custom functionality.
 		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( '@TODO', array( $this, 'action_method_name' ) );
+		add_action( 'comment_form_before', array( $this, 'show_embeded_post' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
 
 	}
@@ -286,8 +286,14 @@ class WP_Redditjs {
 	 *
 	 * @since    1.0.0
 	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
+	public function show_embeded_post() {
+		//$currentURL =  $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+		$currentURL = get_permalink();
+		$embedURL = "http://localhost:8002/embed/url=$currentURL/XZvyRhU&as=4&fffff=123";
+
+		echo "<iframe src='$embedURL' width='500' height='300'></iframe>";
+
+
 	}
 
 	/**
