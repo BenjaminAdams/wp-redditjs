@@ -289,11 +289,31 @@ class WP_Redditjs {
 	public function show_embeded_post() {
 		//$currentURL =  $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 		$currentURL = get_permalink();
+		//$baseUrl = $this->getBaseUrl();
 		$embedURL = "http://localhost:8002/embed/url=$currentURL/XZvyRhU&as=4&fffff=123";
 
-		echo "<iframe src='$embedURL' width='500' height='300'></iframe>";
+		echo "<iframe id='redditjs_post' src='$embedURL' width='500' height='300'></iframe>";
+?>
+
+<script>
+//TODO: move this to JS file
+var o = document.getElementById('redditjs_post');
+o.contentWindow.postMessage('Hello world', '<?php echo $this->getBaseUrl(); ?>');
+</script>
+
+<?php
+
+	}
 
 
+	private function getBaseUrl(){
+		if(isset($_SERVER['HTTPS'])){
+	        $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+	    }
+	    else{
+	        $protocol = 'http';
+	    }
+	    return $protocol . "://" . $_SERVER['HTTP_HOST'];
 	}
 
 	/**
