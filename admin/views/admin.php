@@ -6,10 +6,10 @@
  * The User Interface to the end user.
  *
  * @package   wp-redditjs
- * @author    Your Name <email@example.com>
+ * @author    Benjamin Adams <ben@benadams.co>
  * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
+ * @link      http://redditjs.com
+ * @copyright 2014 Benjamin Adams
  */
 ?>
 
@@ -18,7 +18,7 @@
 if( $_POST['hiddenConfirmPost'] == 'Y' ) { //save posted fields
 
 update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
-//update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
+update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 
 }
 
@@ -40,8 +40,8 @@ update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 <div class="control-group">
   <label class="control-label" for="redditjs_width">Embeded Reddit Size</label>
   <div class="controls">
-   Width: <input id="redditjs_width" name="redditjs_width" value="<?php echo get_option('redditjs_width', 500); ?>" type="text" placeholder="500" class="input-mini">
-   Height: <input id="redditjs_height" name="redditjs_height" value="<?php echo get_option('redditjs_height', 350); ?>" type="text" placeholder="350" class="input-mini">
+   Width: <input name="redditjs_width" value="<?php echo get_option('redditjs_width', 500); ?>" type="text" placeholder="500" class="input-mini">
+   Height: <input name="redditjs_height" value="<?php echo get_option('redditjs_height', 350); ?>" type="text" placeholder="350" class="input-mini">
     <p class="help-block">How wide should the embedded reddit post be? </p>
   </div>
 </div>

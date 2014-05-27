@@ -137,6 +137,7 @@ class WP_Redditjs_Admin {
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), WP_Redditjs::VERSION );
+
 			wp_enqueue_style( "wp-redditjs-bootstrap", "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" );
 			
 		}
@@ -163,6 +164,7 @@ class WP_Redditjs_Admin {
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), WP_Redditjs::VERSION );
+			
 		}
 
 	}
