@@ -1,1 +1,15 @@
 /* This stylesheet is used to style the public-facing components of the plugin. */
+
+
+.redditjs_iframe_wrapper {
+	width:100%;	
+}
+
+#redditjs_post {
+	display: block;
+	margin:0 auto;
+	border:5px #f0f0f0 solid;
+	resize: both;   /* Options: horizontal, vertical, both */
+    overflow: auto; /* fix for Safari */
+
+}

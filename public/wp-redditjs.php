@@ -289,29 +289,12 @@ class WP_Redditjs {
 	public function show_embeded_post() {
 		//$currentURL =  $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 		$currentURL = urlencode ( get_permalink());
-		$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&backgroundColor=fff";
-		
-		echo "<iframe id='redditjs_post' src='$embedURL' width='500' height='300'></iframe>";
-?>
+		$backgroundColor = 'fff';
+		$height = 350;
+		$width= 500;
+		$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&backgroundColor=$backgroundColor";
 
-<script>
-//TODO: move this to JS file
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-
-// Listen to message from child window
-eventer(messageEvent,function(e) {
-	if(typeof e !== 'undefined' && typeof e.data !== 'undefined' && typeof e.data.newHeight !== 'undefined')
-	{
-	document.getElementById('redditjs_post').height = e.data.newHeight+'px';	
-	}
-},false);
-
-
-</script>
-
-<?php
+		echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' width='$width' height='$height'></iframe></div>";
 
 	}
 
