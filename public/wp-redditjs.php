@@ -297,7 +297,17 @@ class WP_Redditjs {
 		$heightpx= $height . 'px';
 		$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg";
 
-		echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' height='$height' width='$width'></iframe></div>";
+		echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
+
+
+		?>
+	<script>
+	window.wp_redditjs = {}
+	//passing users desired iframe height and width to the global object
+	window.wp_redditjs.height= <?php echo $height;?>;
+	window.wp_redditjs.width=<?php echo $width;?>;
+	</script>
+		<?
 
 	}
 

@@ -138,7 +138,7 @@ class WP_Redditjs_Admin {
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), WP_Redditjs::VERSION );
 
-			wp_enqueue_style( "wp-redditjs-bootstrap", "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" );
+			//wp_enqueue_style( "wp-redditjs-bootstrap", "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" );
 			
 		}
 

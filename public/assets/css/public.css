@@ -9,6 +9,14 @@
 	display: block;
 	margin:0 auto;
 	border:5px #f0f0f0 solid;
+	width: 0px;
+	height: 0px;
+
+}
+
+
+.iframePostLoaded {
+
 	resize: both;   /* Options: horizontal, vertical, both */
     overflow: auto; /* fix for Safari */
 

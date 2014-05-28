@@ -1,2 +1,92 @@
-/* This stylesheet is used to style the admin option form of the plugin. */
+/*!
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
+
+legend {
+display: block;
+width: 100%;
+padding: 0;
+margin-bottom: 20px;
+font-size: 21px;
+line-height: inherit;
+color: #333;
+border: 0;
+border-bottom: 1px solid #e5e5e5;
+}
+
+.redditjs_form {
+	margin-top:30px;
+}
+
+
+.form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+margin-top: 0;
+margin-bottom: 0;
+padding-top: 7px;
+}
+
+
+#your-profile label+a, fieldset label, label {
+vertical-align: middle;
+}
+
+label {
+display: inline-block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+border: 1px solid #ddd;
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+background-color: #fff;
+color: #333;
+-webkit-transition: .05s border-color ease-in-out;
+transition: .05s border-color ease-in-out;
+}
+
+.help-block {
+display: block;
+margin-top: 5px;
+margin-bottom: 10px;
+color: #737373;
+}
+
+.btn-primary {
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd;
+}
+
+.btn {
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+-webkit-appearance: button;
+cursor: pointer;
+}
+
+body {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

@@ -31,7 +31,7 @@ update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 <div class="wrap">
 
 
-<form class="form-horizontal" method="post" action="<?php echo admin_url( 'options-general.php?page=' . $this->plugin_slug ) ?>">
+<form class="form-horizontal redditjs_form" method="post" action="<?php echo admin_url( 'options-general.php?page=' . $this->plugin_slug ) ?>">
 <fieldset>
 <!-- Form Name -->
 <legend><h1><?php echo esc_html( get_admin_page_title() ); ?></h1></legend>
