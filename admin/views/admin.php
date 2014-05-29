@@ -29,12 +29,17 @@ update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
 $postSortOrder = get_option('postSortOrder', 'mostUpvoted');
 $sortOptionNewestStr='';
 $sortOptionHighestStr='';
+$sortOptionMostCommentsStr='';
 
 if($postSortOrder=='mostUpvoted')
 {
 $sortOptionHighestStr = "checked='checked'";
-}else {
+}else if($postSortOrder=='newest'){
 $sortOptionNewestStr = "checked='checked'";
+}else if($postSortOrder=='mostComments'){
+$sortOptionMostCommentsStr= "checked='checked'";
+}else {
+	//grrr
 }
 
 
@@ -75,6 +80,12 @@ $sortOptionNewestStr = "checked='checked'";
       <input type="radio" name="postSortOrder" id="postSortOrder-1" value="newest" <?php echo $sortOptionNewestStr; ?> >
       newest
     </label>
+    <label class="radio" for="postSortOrder-2">
+      <input type="radio" name="postSortOrder" id="postSortOrder-2" value="mostComments" <?php echo $sortOptionMostCommentsStr; ?> >
+      most comments
+    </label>
+
+
   </div>
 </div>
 
