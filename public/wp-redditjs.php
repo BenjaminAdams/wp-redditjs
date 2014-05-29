@@ -297,17 +297,17 @@ class WP_Redditjs {
 		$width= get_option('redditjs_width', 500);
 		$widthpx = $width . 'px';
 		$heightpx= $height . 'px';
-		$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postSortOrder=$postSortOrder";
-
-		echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
+		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postSortOrder=$postSortOrder";
+		//echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
+		echo "<script id='rjs_post' src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postSortOrder='$postSortOrder'  ></script>";
 
 
 		?>
 	<script>
-	window.wp_redditjs = {}
-	//passing users desired iframe height and width to the global object
-	window.wp_redditjs.height= <?php echo $height;?>;
-	window.wp_redditjs.width=<?php echo $width;?>;
+	// window.wp_redditjs = {}
+	// //passing users desired iframe height and width to the global object
+	// window.wp_redditjs.height= <?php echo $height;?>;
+	// window.wp_redditjs.width=<?php echo $width;?>;
 	</script>
 		<?
 

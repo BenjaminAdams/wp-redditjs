@@ -1,6 +1,6 @@
 /* This stylesheet is used to style the public-facing components of the plugin. */
 
-
+/*
 .redditjs_iframe_wrapper {
 	width:100%;	
 }
@@ -20,4 +20,4 @@
 	resize: both;   /* Options: horizontal, vertical, both */
     overflow: auto; /* fix for Safari */
 
-}
+}*/
