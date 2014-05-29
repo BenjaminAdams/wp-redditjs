@@ -22,6 +22,11 @@ border-bottom: 1px solid #e5e5e5;
 }
 
 
+.radio {
+	font-weight: normal;
+	padding-right: 15px;
+}
+
 .form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
 margin-top: 0;
 margin-bottom: 0;

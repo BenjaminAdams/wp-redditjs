@@ -21,9 +21,22 @@ update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
 
-var $sortOptionHighest= get_option('postSortOrder', 1);
-var $sortOptionNewest = get_option('postSortOrder', 0);
+}//end _POST
+
+
+
+
+$postSortOrder = get_option('postSortOrder', 'mostUpvoted');
+$sortOptionNewestStr='';
+$sortOptionHighestStr='';
+
+if($postSortOrder=='mostUpvoted')
+{
+$sortOptionHighestStr = "checked='checked'";
+}else {
+$sortOptionNewestStr = "checked='checked'";
 }
+
 
 
 
@@ -55,11 +68,11 @@ var $sortOptionNewest = get_option('postSortOrder', 0);
   <label class="control-label" for="postSortOrder">Show newest or highest upvoted post?</label>
   <div class="controls">
     <label class="radio" for="postSortOrder-0">
-      <input type="radio" name="postSortOrder" id="postSortOrder-0" value="1" checked="checked">
+      <input type="radio" name="postSortOrder" id="postSortOrder-0" value="mostUpvoted" <?php echo $sortOptionHighestStr; ?> >
       highest score
     </label>
     <label class="radio" for="postSortOrder-1">
-      <input type="radio" name="postSortOrder" id="postSortOrder-1" value="0">
+      <input type="radio" name="postSortOrder" id="postSortOrder-1" value="newest" <?php echo $sortOptionNewestStr; ?> >
       newest
     </label>
   </div>
