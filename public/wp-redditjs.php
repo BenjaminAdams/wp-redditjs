@@ -300,7 +300,7 @@ class WP_Redditjs {
 		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postSortOrder=$postSortOrder";
 		//echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
 		echo "<script id='rjs_post' src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postSortOrder='$postSortOrder'  ></script>";
-
+ 
 
 		?>
 	<script>
