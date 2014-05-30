@@ -15,12 +15,15 @@
 
 <?php
 
+$checked="checked='checked'";
+
+
 if( $_POST['hiddenConfirmPost'] == 'Y' ) { //save posted fields
 
 update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
-
+update_option( "showSubmit", $_POST[ "showSubmit" ] );
 }//end _POST
 
 
@@ -33,13 +36,18 @@ $sortOptionMostCommentsStr='';
 
 if($postSortOrder=='mostUpvoted')
 {
-$sortOptionHighestStr = "checked='checked'";
+$sortOptionHighestStr = $checked;
 }else if($postSortOrder=='newest'){
-$sortOptionNewestStr = "checked='checked'";
+$sortOptionNewestStr = $checked;
 }else if($postSortOrder=='mostComments'){
-$sortOptionMostCommentsStr= "checked='checked'";
-}else {
-	//grrr
+$sortOptionMostCommentsStr= $checked;
+}
+
+$showSubmit =get_option('showSubmit', true);
+$showSubmitStr="";
+if($showSubmit==true)
+{
+	$showSubmitStr=$checked;
 }
 
 
@@ -84,8 +92,16 @@ $sortOptionMostCommentsStr= "checked='checked'";
       <input type="radio" name="postSortOrder" id="postSortOrder-2" value="mostComments" <?php echo $sortOptionMostCommentsStr; ?> >
       most comments
     </label>
+  </div>
+</div>
 
-
+<!-- show submit checkbox -->
+<div class="control-group">
+  <label class="control-label" for="showSubmit">Show submit button</label>
+  <div class="controls">
+   <input name="redditjs_width" <?php echo $showSubmitStr; ?> type="checkbox" class="input-mini">
+ 
+    <p class="help-block">If we find no post on reddit for your page URL, should we show a subit button? </p>
   </div>
 </div>
 

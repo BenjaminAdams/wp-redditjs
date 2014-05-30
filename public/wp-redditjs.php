@@ -291,15 +291,15 @@ class WP_Redditjs {
 		$currentURL = urlencode ( get_permalink());
 		//$backgroundColor = get_option('redditjs_background_color', 'fff');
 		$submitPostImg = get_option('submitPostImg', 'http://www.reddit.com/static/spreddit11.gif');
-
+		$showSubmit = get_option('showSubmit', true);
 		$postFinder = get_option('postFinder', 'mostUpvoted');
 		$height = get_option('redditjs_height', 450);
 		$width= get_option('redditjs_width', 500);
-		$widthpx = $width . 'px';
-		$heightpx= $height . 'px';
+		//$widthpx = $width . 'px';
+		//$heightpx= $height . 'px';
 		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postFinder=$postFinder";
 		//echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
-		echo "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postFinder='$postFinder'></script>";
+		echo "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postFinder='$postFinder' data-showSubmit='$showSubmit'></script>";
 
 	}
 
