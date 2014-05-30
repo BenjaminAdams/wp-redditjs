@@ -292,14 +292,14 @@ class WP_Redditjs {
 		//$backgroundColor = get_option('redditjs_background_color', 'fff');
 		$submitPostImg = get_option('submitPostImg', 'http://www.reddit.com/static/spreddit11.gif');
 
-		$postSortOrder = get_option('postSortOrder', 'mostUpvoted');
-		$height = get_option('redditjs_height', 350);
+		$postFinder = get_option('postFinder', 'mostUpvoted');
+		$height = get_option('redditjs_height', 450);
 		$width= get_option('redditjs_width', 500);
 		$widthpx = $width . 'px';
 		$heightpx= $height . 'px';
-		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postSortOrder=$postSortOrder";
+		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postFinder=$postFinder";
 		//echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
-		echo "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postSortOrder='$postSortOrder'></script>";
+		echo "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postFinder='$postFinder'></script>";
 
 	}
 
