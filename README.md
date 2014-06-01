@@ -15,7 +15,7 @@ The post widget will embed itself onto your Wordpress post and detect if it has 
 
 If you are not using the Wordpress plugin, you can add this script tag on any website.
 
-`&lt;script src='//redditjs.com/post.js' &gt;&lt;/script&gt;`
+```<script src='//redditjs.com/post.js' </script>```
 ### Options
 
 <table style='width:800px'>
@@ -30,7 +30,7 @@ If you are not using the Wordpress plugin, you can add this script tag on any we
 
 ### example with all options
 
-~~~~ {.prettycode .lang-js}
-&lt;script src='//redditjs.com/post.js' data-url='http://www.techodrom.com/etc/star-trek-edges-closer-reality-tractor-beam-moves-object-using-nothing-power-ultrasound/' data-height='500' data-width='500' data-post-finder='newest' data-theme='dark' data-show-submit='true'  &gt;&lt;/script&gt;
-~~~~
+```
+<script src='//redditjs.com/post.js' data-url='http://www.techodrom.com/etc/star-trek-edges-closer-reality-tractor-beam-moves-object-using-nothing-power-ultrasound/' data-height='500' data-width='500' data-post-finder='newest' data-theme='dark' data-show-submit='true'  </script>
+```
 
