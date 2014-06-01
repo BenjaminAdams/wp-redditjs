@@ -12,15 +12,43 @@ Here is a short description of the plugin.  This should be no more than 150 char
 
 == Description ==
 
-Embed reddit on wordpress pages
+[wp-redditjs](https://github.com/BenjaminAdams/wp-redditjs) uses redditJS.com to create widgets to embed on your website.
+
+The post widget will embed itself onto your Wordpress post and detect if it has been posted to reddit.
+
+	* If it has NOT been posted to reddit it will <a href="http://i.imgur.com/OLJjzkx.png" title="example" target='_blank'>show a link</a> to encourage the user to submit.
+	* If it has been posted, it will load a widget displaying that reddit post giving the user where they can upvote/comment that post.
+
+[wp-redditjs](https://github.com/BenjaminAdams/wp-redditjs) will give you a chat box similar to facebook or disqus comment system.  This is excellent for websites that have their content submitted to reddit.  It will help increase reddit activity with more upvotes and comments and allow the user to freely navigate reddit.
+
+## Instructions
+
+If you are not using the Wordpress plugin, you can add this script tag on any website.
+
+`&lt;script src='//redditjs.com/post.js' &gt;&lt;/script&gt;`
+### Options
+
+<table style='width:800px'>
+<tr><th style='width:125px;'>Name</th><th>Description</th> <th>values</th> <th>Default</th></tr>
+<tr><td>data-url</td><td>The URL you want to search in reddit to embed on your site.</td> <td>any url</td>  <td>current URL</td> </tr>
+<tr><td>data-width</td><td>Width of the post widget.</td> <td>number</td> <td>500</td> </tr>
+<tr><td>data-height</td><td>Height of the post widget.</td> <td>number</td> <td>500</td> </tr>
+<tr><td>data-post-finder</td><td>If the URL has been submitted multiple times to reddit, it will display the most relevant post based on your setting.</td> <td>newest, mostUpvoted, mostComments</td> <td>mostComments</td> </tr>
+<tr><td>data-theme</td><td>Change the theme</td> <td>light, dark <td>light</td> </tr>
+<tr><td>data-show-submit</td><td>If we don't find a post on reddit, should we display a "submit to reddit" widget.</td> <td>true,false</td> <td>true</td> </tr>
+</table>
+
+### example with all options
+
+~~~~ {.prettycode .lang-js}
+&lt;script src='//redditjs.com/post.js' data-url='http://www.techodrom.com/etc/star-trek-edges-closer-reality-tractor-beam-moves-object-using-nothing-power-ultrasound/' data-height='500' data-width='500' data-post-finder='newest' data-theme='dark' data-show-submit='true'  &gt;&lt;/script&gt;
+~~~~
+
+### And here is an example linked to this page
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-= Using The WordPress Dashboard =
+Install plugin, configure in wp-redditjs options
 
 1. Navigate to the 'Add New' in the plugins dashboard
 2. Search for 'wp-redditjs'
@@ -55,36 +83,13 @@ Answer to foo bar dilemma.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. ![example1](http://i.imgur.com/GXj1FKO.png "example of post")
+
+2. ![example2](http://i.imgur.com/OLJjzkx.png "When no post is found")
+
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== Updates ==
-
-The basic structure of this plugin was cloned from the [WordPress-Plugin-Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate) project.
-This plugin supports the [GitHub Updater](https://github.com/afragen/github-updater) plugin, so if you install that, this plugin becomes automatically updateable direct from GitHub. Any submission to WP.org repo will make this redundant.
