@@ -76,8 +76,9 @@ class WP_Redditjs {
 		/* Define custom functionality.
 		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( 'comment_form_before', array( $this, 'show_embeded_post' ) );
-		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+		//add_action( 'comment_form_before', array( $this, 'show_embeded_post' ) );
+		add_filter('the_content', array( $this, 'show_embeded_post' ));
+		//add_filter( '@TODO', array( $this, 'filter_method_name' ) );
 
 	}
 
@@ -286,22 +287,21 @@ class WP_Redditjs {
 	 *
 	 * @since    1.0.0
 	 */
-	public function show_embeded_post() {
+	public function show_embeded_post($content) {
 		//$currentURL =  $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 		$currentURL = urlencode ( get_permalink());
 		//$backgroundColor = get_option('redditjs_background_color', 'fff');
 		$submitPostImg = get_option('submitPostImg', 'http://www.reddit.com/static/spreddit11.gif');
 		$showSubmit = get_option('showSubmit', 'true');
-		$postFinder = get_option('postFinder', 'mostUpvoted');
-		$height = get_option('redditjs_height', 450);
+		$post_finder = get_option('post_finder', 'mostUpvoted');
+		$height = get_option('redditjs_height', 500);
 		$width= get_option('redditjs_width', 500);
 		$cssTheme= get_option('cssTheme', 'light');
 		//$widthpx = $width . 'px';
 		//$heightpx= $height . 'px';
-		//$embedURL = "http://localhost:8002/embed?url=$currentURL&as=4&submitPostImg=$submitPostImg&postFinder=$postFinder";
-		//echo "<div class='redditjs_iframe_wrapper'><iframe id='redditjs_post' src='$embedURL' ></iframe></div>";
-		echo "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-postFinder='$postFinder' data-showSubmit='$showSubmit' data-theme='$cssTheme'></script>";
 
+		$iframe= "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-post-finder='$post_finder' data-show-submit='$showSubmit' data-theme='$cssTheme'></script>";
+		return $content .= $iframe;
 	}
 
 

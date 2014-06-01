@@ -22,7 +22,7 @@ if( $_POST['hiddenConfirmPost'] == 'Y' ) { //save posted fields
 
 update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
-update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
+update_option( "post_finder", $_POST[ "post_finder" ] );
 
 
 if($_POST[ "showSubmit" ]=='on')
@@ -38,17 +38,17 @@ update_option( "cssTheme", $_POST[ "cssTheme" ] );
 
 
 
-$postSortOrder = get_option('postSortOrder', 'mostUpvoted');
-$sortOptionNewestStr='';
-$sortOptionHighestStr='';
-$sortOptionMostCommentsStr='';
-if($postSortOrder=='mostUpvoted')
+$post_finder = get_option('post_finder', 'mostUpvoted');
+$postFinderNewestStr='';
+$postFinderHighestStr='';
+$postFinderMostCommentsStr='';
+if($post_finder=='mostUpvoted')
 {
-$sortOptionHighestStr = $checked;
-}else if($postSortOrder=='newest'){
-$sortOptionNewestStr = $checked;
-}else if($postSortOrder=='mostComments'){
-$sortOptionMostCommentsStr= $checked;
+$postFinderHighestStr = $checked;
+}else if($post_finder=='newest'){
+$postFinderNewestStr = $checked;
+}else if($post_finder=='mostComments'){
+$postFinderMostCommentsStr= $checked;
 }
 
 $showSubmit =get_option('showSubmit', 'true');
@@ -91,7 +91,7 @@ $cssThemeLightStr = $checked;
   <label class="control-label" for="redditjs_width">Embeded Reddit Size</label>
   <div class="controls">
    Width: <input name="redditjs_width" value="<?php echo get_option('redditjs_width', 500); ?>" type="text" placeholder="500" class="input-mini">
-   Height: <input name="redditjs_height" value="<?php echo get_option('redditjs_height', 450); ?>" type="text" placeholder="350" class="input-mini">
+   Height: <input name="redditjs_height" value="<?php echo get_option('redditjs_height', 500); ?>" type="text" placeholder="350" class="input-mini">
     <p class="help-block">How wide should the embedded reddit post be? </p>
   </div>
 </div>
@@ -99,18 +99,18 @@ $cssThemeLightStr = $checked;
 
 <!-- sort  -->
 <div class="control-group">
-  <label class="control-label" for="postSortOrder">Show newest or highest upvoted post?</label>
+  <label class="control-label" for="post_finder">Show newest or highest upvoted post?</label>
   <div class="controls">
-    <label class="radio" for="postSortOrder-0">
-      <input type="radio" name="postSortOrder" id="postSortOrder-0" value="mostUpvoted" <?php echo $sortOptionHighestStr; ?> >
+    <label class="radio" for="post_finder-0">
+      <input type="radio" name="post_finder" id="post_finder-0" value="mostUpvoted" <?php echo $postFinderHighestStr; ?> >
       highest score
     </label>
-    <label class="radio" for="postSortOrder-1">
-      <input type="radio" name="postSortOrder" id="postSortOrder-1" value="newest" <?php echo $sortOptionNewestStr; ?> >
+    <label class="radio" for="post_finder-1">
+      <input type="radio" name="post_finder" id="post_finder-1" value="newest" <?php echo $postFinderNewestStr; ?> >
       newest
     </label>
-    <label class="radio" for="postSortOrder-2">
-      <input type="radio" name="postSortOrder" id="postSortOrder-2" value="mostComments" <?php echo $sortOptionMostCommentsStr; ?> >
+    <label class="radio" for="post_finder-2">
+      <input type="radio" name="post_finder" id="post_finder-2" value="mostComments" <?php echo $postFinderMostCommentsStr; ?> >
       most comments
     </label>
   </div>
