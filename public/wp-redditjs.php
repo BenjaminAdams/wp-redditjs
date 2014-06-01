@@ -288,6 +288,10 @@ class WP_Redditjs {
 	 * @since    1.0.0
 	 */
 	public function show_embeded_post($content) {
+	if(is_single())
+	{
+
+
 		//$currentURL =  $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 		$currentURL = urlencode ( get_permalink());
 		//$backgroundColor = get_option('redditjs_background_color', 'fff');
@@ -300,8 +304,11 @@ class WP_Redditjs {
 		//$widthpx = $width . 'px';
 		//$heightpx= $height . 'px';
 
-		$iframe= "<script src='//localhost:8002/post.js' data-width='$width' data-height='$height' data-post-finder='$post_finder' data-show-submit='$showSubmit' data-theme='$cssTheme'></script>";
+		$iframe= "<script src='//redditjs.com/post.js' data-width='$width' data-height='$height' data-post-finder='$post_finder' data-show-submit='$showSubmit' data-theme='$cssTheme'></script>";
 		return $content .= $iframe;
+	}else {
+		return $content;
+	}
 	}
 
 
