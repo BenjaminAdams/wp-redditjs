@@ -23,8 +23,16 @@ if( $_POST['hiddenConfirmPost'] == 'Y' ) { //save posted fields
 update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
-update_option( "showSubmit", $_POST[ "showSubmit" ] );
 
+
+if($_POST[ "showSubmit" ]=='on')
+{
+update_option( "showSubmit", 'true' );
+}else {
+update_option( "showSubmit", 'false' );
+}
+
+update_option( "cssTheme", $_POST[ "cssTheme" ] );
 }//end _POST
 
 
@@ -34,7 +42,6 @@ $postSortOrder = get_option('postSortOrder', 'mostUpvoted');
 $sortOptionNewestStr='';
 $sortOptionHighestStr='';
 $sortOptionMostCommentsStr='';
-
 if($postSortOrder=='mostUpvoted')
 {
 $sortOptionHighestStr = $checked;
@@ -44,11 +51,24 @@ $sortOptionNewestStr = $checked;
 $sortOptionMostCommentsStr= $checked;
 }
 
-$showSubmit =get_option('showSubmit', true);
+$showSubmit =get_option('showSubmit', 'true');
 $showSubmitStr="";
-if($showSubmit==true)
+if($showSubmit=='true')
 {
 	$showSubmitStr=$checked;
+}
+
+
+//cssTheme
+$cssTheme = get_option('cssTheme', 'light');
+$cssThemeDarkStr='';
+$cssThemeLightStr='';
+
+if($cssTheme=='dark')
+{
+$cssThemeDarkStr = $checked;
+}else if($cssTheme=='light'){
+$cssThemeLightStr = $checked;
 }
 
 
@@ -71,13 +91,13 @@ if($showSubmit==true)
   <label class="control-label" for="redditjs_width">Embeded Reddit Size</label>
   <div class="controls">
    Width: <input name="redditjs_width" value="<?php echo get_option('redditjs_width', 500); ?>" type="text" placeholder="500" class="input-mini">
-   Height: <input name="redditjs_height" value="<?php echo get_option('redditjs_height', 350); ?>" type="text" placeholder="350" class="input-mini">
+   Height: <input name="redditjs_height" value="<?php echo get_option('redditjs_height', 450); ?>" type="text" placeholder="350" class="input-mini">
     <p class="help-block">How wide should the embedded reddit post be? </p>
   </div>
 </div>
 
 
-<!-- Multiple Radios -->
+<!-- sort  -->
 <div class="control-group">
   <label class="control-label" for="postSortOrder">Show newest or highest upvoted post?</label>
   <div class="controls">
@@ -106,6 +126,21 @@ if($showSubmit==true)
   </div>
 </div>
 
+
+<!-- cssTheme -->
+<div class="control-group">
+  <label class="control-label" for="cssTheme">Choose Theme</label>
+  <div class="controls">
+    <label class="radio" for="cssTheme-0">
+      <input type="radio" name="cssTheme" id="cssTheme-0" value="light" <?php echo $cssThemeLightStr; ?> >
+      light
+    </label>
+    <label class="radio" for="cssTheme-1">
+      <input type="radio" name="cssTheme" id="cssTheme-1" value="dark" <?php echo $cssThemeDarkStr; ?> >
+      dark
+    </label>
+  </div>
+</div>
 
 
 
