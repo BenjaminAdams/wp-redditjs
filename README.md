@@ -5,8 +5,9 @@ wp-redditjs
 
 The post widget will embed itself onto your Wordpress post and detect if it has been posted to reddit.
 
-	* If it has NOT been posted to reddit it will <a href="http://i.imgur.com/OLJjzkx.png" title="example" target='_blank'>show a link</a> to encourage the user to submit.
-	* If it has been posted, it will load a widget displaying that reddit post giving the user where they can upvote/comment that post.
+ If it has NOT been posted to reddit it will <a href="http://i.imgur.com/OLJjzkx.png" title="example" target='_blank'>show a link</a> to encourage the user to submit.
+
+ If it has been posted, it will load a widget displaying that reddit post giving the user where they can upvote/comment that post.
 
 [wp-redditjs](https://github.com/BenjaminAdams/wp-redditjs) will give you a chat box similar to facebook or disqus comment system.  This is excellent for websites that have their content submitted to reddit.  It will help increase reddit activity with more upvotes and comments and allow the user to freely navigate reddit.
 
