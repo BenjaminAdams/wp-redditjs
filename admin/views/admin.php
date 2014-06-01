@@ -24,6 +24,7 @@ update_option( "redditjs_width", $_POST[ "redditjs_width" ] );
 update_option( "redditjs_height", $_POST[ "redditjs_height" ] );
 update_option( "postSortOrder", $_POST[ "postSortOrder" ] );
 update_option( "showSubmit", $_POST[ "showSubmit" ] );
+
 }//end _POST
 
 
@@ -99,7 +100,7 @@ if($showSubmit==true)
 <div class="control-group">
   <label class="control-label" for="showSubmit">Show submit button</label>
   <div class="controls">
-   <input name="redditjs_width" <?php echo $showSubmitStr; ?> type="checkbox" class="input-mini">
+   <input name="showSubmit" <?php echo $showSubmitStr; ?> type="checkbox" class="input-mini">
  
     <p class="help-block">If we find no post on reddit for your page URL, should we show a subit button? </p>
   </div>
