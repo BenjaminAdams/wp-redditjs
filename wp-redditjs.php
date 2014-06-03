@@ -18,18 +18,20 @@
  * Version:           1.0.0
  * Author:            Benjamin Adams
  * Author URI:        http://redditjs.com
- * Text Domain:       plugin-name-locale
+ * Text Domain:       wp-redditjs
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/<owner>/<repo>
- * WordPress-Plugin-Boilerplate: v2.6.1
+ * GitHub Plugin URI: https://github.com/benjaminadams\wp-redditjs
  */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+
+require_once('widget.php');
 
 /*----------------------------------------------------------------------------*
  * Public-Facing Functionality
