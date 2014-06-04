@@ -52,7 +52,7 @@ if( $instance) {
 <input id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" style='width:65px;' placeholder="400px" value="<?php echo $height; ?>" />px
 </p>
 
-<div style='border:1px dashed gray; padding:1px;'>
+<div style='border:1px dashed gray; padding:8px;'>
 Either enter a domain or subreddit to embed, leave domain blank if you want to embed a subreddit
 <p>
 <label for="<?php echo $this->get_field_id('subreddit'); ?>"><?php _e('Subreddit', 'redditjs_sidebar'); ?></label>
@@ -161,7 +161,7 @@ function widget($args, $instance) {
       echo $before_title . $title . $after_title;
    }
 
-   echo "<script src='//redditjs.com/subreddit.js' data-subreddit='$subreddit' data-domain='$domain' data-height='$height' data-width='$width' data-sort='$sort' data-timeframe='$timeframe' data-theme='$theme' data-subreddit-mode='$gridDisplayMode' ></script>";
+   echo "<div><script src='//redditjs.com/subreddit.js' data-subreddit='$subreddit' data-domain='$domain' data-height='$height' data-width='$width' data-sort='$sort' data-timeframe='$timeframe' data-theme='$theme' data-subreddit-mode='$gridDisplayMode' ></script></div>";
    
    echo '</div>';
    echo $after_widget;
