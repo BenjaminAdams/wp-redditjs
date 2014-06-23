@@ -1,7 +1,7 @@
 wp-redditjs
 ==================
 
-[wp-redditjs](https://github.com/BenjaminAdams/wp-redditjs) uses redditJS.com to create widgets to embed on your website.
+[Reddit Embed](https://wordpress.org/plugins/wp-redditjs/) uses redditJS.com to create widgets to embed on your website.
 
 The post widget will embed itself onto your Wordpress post and detect if it has been posted to reddit.
 
